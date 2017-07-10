@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//容量限制策略
+			//给缓存设置容量限制，当所存的数据超出了容量限制的时候
+			//就将最早存进来的数据删除，将新数据存进去！
+
+		function createCache(){
+			var cache = {};
+			//下面这个数组，可以在存储数据的时候，将数据的键存一份进来
+			//数组中存储的键的数量就可以和对象中存储的数据的数量对应起来了
+			//数组中存储的键的顺序，也就可以和对象中存储的数据的顺序进行一一对应了
+			var keys = [];
+			return function(key, value){
+				if(value){
+					cache[key] = value;
+					keys.push(key);
+					//容量判断
+					if(keys.length > 3){
+						//如果数据的个数大于了容量限制
+						//就删除最早加进来的数据
+						var delKey = keys.shift();
+						delete cache[delKey];
+					}
+				}else{
+					return cache[key];
+				}
+			}
+		}
+
+		var cache = createCache();
+
+		//存数据
+		cache("班长", {name: "浦东吴彦祖"});
+		cache("班长夫人", {name: "如凤姐"});
+		cache("班长二姨太", {name: "翠花"});
+
+
+		//取数据
+		// console.log(cache("班长"));
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

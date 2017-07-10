@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1. 
+		// function foo() {
+		//     var num = 123;
+		//     console.log(num); //
+		// }
+		// foo();
+		// console.log(num); //
+
+		//2.
+		// var scope = "global";
+		// function foo() {
+		//     console.log(scope); //
+		//     var scope = "local";
+		//     console.log(scope); //
+		// }
+		// foo();
+		//提升后的代码
+		// var scope;
+		// function foo() {
+		// 	var scope;
+		//     console.log(scope); //
+		//     scope = "local";
+		//     console.log(scope); //
+		// }
+		// scope = "global";
+		// foo();
+
+		//3. 
+		// if("a" in window){
+		//     var a = 10;
+		// }
+		// alert(a); // ?
+
+		//提升后的代码
+		// var a;
+		// if("a" in window){
+		// 	a = 10;
+		// }
+		// alert(a);
+
+
+		// if(!"a" in window){
+		//     var a = 10;
+		// }
+		// alert(a); // ?
+
+
+		// var foo = 1;
+		// function bar() {
+		//     if(!foo) {
+		//         var foo = 10;
+		//     }
+		//     alert(foo); //
+		// }
+		// bar();
+
+		//提升后的代码
+		// var foo;
+		// function bar() {
+		// 	var foo;
+		//     if(!foo) {
+		//         foo = 10;
+		//     }
+		//     alert(foo); //
+		// }
+		// foo = 1;
+		// bar();
+
+
+		// var num = 123;
+		// function f1() {
+		//     console.log(num); 
+		// }
+
+		// function f2() {
+		//     var num = 456;
+		//     f1();
+		// }
+
+		// f2();
+
+		// var num = 123;
+		// function f1(num) { 
+		// 	//var num = 456
+		//     console.log(num); 
+		// }
+
+
+		// function f2() {
+		//     var num = 456;
+		//     f1(num); 
+		// }
+
+		// f2();
+
+		// var num = 123
+		// function f1() {
+		//     console.log(num); 
+		// }
+
+		// f2();
+
+		// function f2() {
+		//     num = 456;
+		//     f1();
+		// }
+		// console.log(num); 
+
+
+		// (function (a) {
+		// 	//var a = 100;
+
+
+		//     function a(){}
+		//     console.log(a); 
+		//     a = 10;
+		// }( 100 ));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1. 递归 （算法）
+			//在函数中直接或者间接的调用自己
+
+
+		//2. 递归有两大要素
+			//1. 必须要有自己调用自己
+			//2. 必须要有结束条件
+
+		//3. 化归思想 
+			//化归思想，将一个问题由难化易，由繁化简，由复杂化简单的过程称为化归，它是转化和归结的简称。
+
+		// function test(){
+		// 	 test();
+		// }
+
+		// test();
+
+		//4. 递归解决数学问题
+		//4.1 前n项和
+			//前5项和： 1 + 2 + 3 + 4 + 5     5 + 前4项和
+			//前4项和： 1 + 2 + 3 + 4		  4 + 前3项和
+			//前3项和： 1 + 2 + 3			  3 + 前2项和
+			//前2项和： 1 + 2				  2 + 前1项和
+			//前1项和： 1
+
+		//fn(n) = fn(n - 1) + n;
+		//结束条件： n == 1的时候，直接得出1 不用继续再往前算了
+
+		function sum(n){
+			if(n == 1){
+				return 1;
+			}
+			return sum(n - 1) + n;
+		}
+
+		console.log(sum(5));
+
+
+		// n!  1 * ...* n
+
+		//5!： 1 * 2 * 3 * 4 * 5      5 * 4!
+		//4!： 1 * 2 * 3 * 4		  4 * 3!
+		//3!： 1 * 2 * 3			  3 * 2!
+		//2!： 1 * 2				  2 * 1!
+		//1!： 1
+
+		//fn(n) = fn(n - 1) * n
+		//结束条件： n = 1
+
+		function fac(n){
+			if(n == 1){
+				return 1;
+			}
+			return fac(n - 1) * n;
+		}
+
+		console.log(fac(5));
+
+
+		//求n的m次方
+			//n 的 5 次方  n * n * n * n * n
+			//n 的 4 次方  n * n * n * n
+			//n 的 3 次方  n * n * n
+			//n 的 2 次方  n * n
+			//n 的 1 次方  n
+
+			//fn(n, m) = fn(n, m-1) * n;
+
+		function power(n, m){
+			if(m == 1){
+				return n;
+			}
+			return power(n, m - 1) * n;
+		}
+
+		console.log(power(5, 2));
+
+
+		//斐波那契数列
+		//1 1 2 3 5 8 13 21 34 55......
+
+		//fn(n) = fn(n - 1) + fn(n - 2);
+		//n == 1 n == 2  1
+
+		// function fib(n){
+		// 	if(n == 1 || n == 2){
+		// 		return 1;
+		// 	}
+		// 	return fib(n - 1) + fib(n - 2);
+		// }
+
+		// console.log(fib(41));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

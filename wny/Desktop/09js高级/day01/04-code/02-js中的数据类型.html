@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script>
+
+		//js中的数据类型
+		//1. 基本类型
+			// string    var str = "abc";
+			// number    var num = 1;
+			// boolean   var flag = true;
+
+		//2. 复合类型 复杂类型
+			//Object   var obj = new Object();
+			//function 
+
+			//Array   var arr = new Array();
+			//Date     var now = new Date();
+			//RegExp   var reg = new RegExp();
+			//Math   
+			//String   var str = new String();
+			//Number   var num = new Number();
+			//Boolean  var bl = new Boolean();
+
+			
+
+		//3 空类型
+			//null
+			//undefined
+
+		//3.如何获取数据类型
+		//typeof  数据
+		//typeof关键字的返回值是字符串类型的一个字符串，表示数据的类型！
+		
+		//所有复合类型的数据除了function其他的所有类型的数据使用typeof获取数据类型获取到的都是 "object"
+
+
+		//typeof null 返回的是 object  但是不代表这个null是一个复杂类型的数据
+
+		//typoef undefined 返回的是 undefined
+		console.log(typeof null);
+		console.log(typeof undefined);
+
+
+		// function createPerson(name){
+		// 	if(name){
+		// 		var obj = {}
+		// 		obj.name = name;
+		// 		return obj;
+		// 	}
+		// 	return null;
+		// }
+
+		// var p = createPerson();
+
+		// var str = "abc";
+		// var num = 123;
+		// var f = true;
+
+		// var obj = {};
+		// var arr = [];
+		// var now = new Date();
+		// console.log(typeof (typeof function(){}));
+
+
+		function getType(obj){
+			// if(obj instanceof Array){
+			// 	return "Array";
+			// }else if(obj instanceof Date){
+			// 	return "Date";
+			// }else{
+			// 	return "RegExp";
+			// }
+			return Object.prototype.toString.call(obj).slice(8, -1);
+		}
+
+		var arr = [];
+		var now = new Date();
+		var reg = /\d/;
+		console.log(getType(arr));  //Array
+		console.log(getType(now));  //Date
+		console.log(getType(reg));  //
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

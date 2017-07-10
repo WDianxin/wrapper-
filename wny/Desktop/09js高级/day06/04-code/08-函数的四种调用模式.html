@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1. 函数调用模式
+		//函数名();
+		//this ----> window对象
+
+		// function test(){
+		// 	console.log(this);
+		// }
+		// test();
+
+		//2. 方法调用模式
+		//对象名.方法名();
+		//对象名[方法名]()
+		//this ----> 哪个对象调用的该方法，就是哪个对象
+
+		// var obj = {
+		// 	test: function(){
+		// 		console.log(this);
+		// 	}
+		// }
+		// obj.test();
+
+		//3. 构造函数调用模式
+		//new 函数名();
+		//this ----> new创建出来的对象
+
+
+
+
+		// function func(){
+		// 	console.log(this);
+		// }
+		// var obj = {};
+		// obj.sayHi = func;
+		// obj.sayHi();  //this ----> 调用方法的对象obj
+
+
+		// var o = {
+		// 	test: function(){
+		// 		console.log(this);
+		// 	}
+		// }
+		// var f = o.test;
+		// f();   //this ----> window
+
+
+		// var length = 10;
+		// var arr = [
+		// 	function(){
+		// 		console.log(this.length);
+		// 	}
+		// ];
+
+		// arr[0]();
+		//arr.0();
+
+
+		// var length = 10;
+
+		// (function(){
+		// 	arguments[0]();
+		// 	//arguments.0(); 方法调用模式
+		// })(function(){
+		// 	console.log(this.length);
+		// })
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

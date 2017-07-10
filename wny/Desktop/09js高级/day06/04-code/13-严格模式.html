@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//如何开启严格模式
+		// "use strict"
+		// 'use strict'
+
+		// function test(){
+		// 	"use strict"
+		// }
+
+		//1、 严格模式下，声明变量必须使用var
+		// a = 10;
+
+
+		//2、 严格模式下，不允许函数参数重名
+		// function test(a, a){
+		// 	//var a = 1;
+		// 	//var a = 2;
+		// 	console.log(a);
+		// }
+
+		// test(1, 2);
+
+		//3、ES6之前，严格模式下是不允许属性名重名！
+		// var obj = {
+		// 	name: "吴彦祖",
+		// 	name: "宋小宝"
+		// };
+		// console.log(obj.name);
+
+		//4. 严格模式下的eval有自己的作用域
+		// eval("var a = 10;console.log(a);")
+
+		//5. 严格模式下不允许使用8进制数字
+		//js中数字如果以0开头，则会被当做8进制数字处理
+		//js中数字如果以0x开头, 则会被当做16进制数字处理
+		var a = 0x10;
+		console.log(a);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

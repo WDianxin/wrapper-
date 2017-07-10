@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1.  for-in  遍历对象的属性
+			//对象的属性名都是string类型的
+		var obj = {
+			name: "张学友",
+			age: 18
+		}
+
+		// for(var k in obj){
+		// 	// console.log(typeof k);
+		// 	console.log(obj[k]);
+		// }
+
+		//2. 属性名 in 对象   判断对象能否访问某个属性
+		// console.log("name" in obj);
+		// console.log("toString" in obj);
+		// console.log("valueOf" in obj);
+
+
+		var arr = [1, 2, 3, 4, 5];
+
+		//下面的代码判断的是数组中是否存在下标为5的元素
+		console.log(5 in arr);
+
+		//下面的代码判断的时候数组中是否存在值为5的元素
+		console.log(arr.indexOf(5));
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

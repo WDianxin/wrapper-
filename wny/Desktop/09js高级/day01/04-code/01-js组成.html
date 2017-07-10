@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//API  application programming interface
+
+		//JavaScript的组成
+		//1. DOM 文档对象模型（Document Object Model） 提供了一整套操作页面元素的API
+
+		//2. BOM 浏览器对象模型（Browser Object Model）提供了一整套操作浏览器相关信息的API
+		//location  window.location
+
+		//3. ECMAScript 规定了JS的语法规范以及各种标准
+
+
+		//?key=value&key=value
+		// location.search 
+
+		function getSearch(){
+			var obj = {};
+			//代码
+			//1. 获取地址栏中的用户传入的参数
+			//获取到的结果是 ?key=value&key=value  字符串
+			var searchStr = location.search;
+			//2. 去掉字符串头部的?
+			searchStr = searchStr.slice(1);
+			//3. 将这个字符串以&作为分隔拆分
+			//拆成一个数组，数组里面每个元素都是  key=value 这种字符串
+			var searchArr = searchStr.split("&");
+
+			//4. 遍历刚才拆出来的数组
+			for(var i = 0; i < searchArr.length; i++){
+				//5. 将key=value字符串以=作为分隔进行拆解
+				var keyValuePair = searchArr[i].split("=");
+				//获取到键
+				var key = keyValuePair[0];
+				//获取到值
+				var value = keyValuePair[1];
+
+				//将这个key作为键，给obj新增一个属性，值为value
+				obj[key] = value;
+			}
+			return obj;
+		}
+
+		var search = getSearch();
+		console.log(search.a);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

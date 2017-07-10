@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1. 函数调用模式
+		//函数名();
+		//2. 方法调用模式
+		//对象名.方法名();
+		//3. 构造函数调用模式
+
+
+		//lvalue:  左值，能够在等号左边接受别人赋值的值就可以称为左值
+		//rvalue:  右值，能够在等号右边给别人赋值的值就可以称为右值
+
+		//this是一个纯右值，只能用来给别人赋值，或者获取内容使用，不能被赋值！
+		//this 和 1 的概念相似
+
+		// function test(a, b, c){
+		// 	console.log(a, b, c);
+		// 	console.log(this);
+		// }
+		// test(1, 2, 3);
+
+
+		//4. 上下文（context）调用模式
+			//在上下文调用模式中，可以更改this的指向！
+
+			//call
+				//函数名.call(obj, arg1...argN)
+					//1. 调用该函数
+					//2. 将函数中的this指向第一个参数传入的obj
+					//3. 将call方法传入的第二个及之后所有的参数依次传递给函数作为实参
+
+				// test.call({name: "对象哦"}, 1, 2, 3);
+
+			//apply
+				//函数名.apply(obj)
+					//1. 调用该函数
+					//2. 将函数中的this指向第一个参数传入的obj
+					//3. 将apply方法传入的第二个参数（数组或者伪数组）中所有的元素依次拆解开了，传递给函数作为实参
+				// test.apply({name: "对象哦"}, [1, 2, 3]);
+
+
+			//上下文调用模式的注意事项
+				//1. 当给call和apply方法的第一个参数传递的是一个值类型的数据的时候，系统会自动将其抓换成对应的引用类型的数据，然后将this指向这个引用类型的数据
+
+				//2. 如果给call和apply方法传递的第一个参数是null或者undefined，或者，一个参数都不传，函数中this会指向window对象！
+
+			// function test(){
+			// 	console.log(this);
+			// }
+
+			// test();
+			// test.call();
+			// test.apply();
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

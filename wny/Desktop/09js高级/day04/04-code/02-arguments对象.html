@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		// var fakeArr = {
+		// 	0: "a",
+		// 	1: "b",
+		// 	2: "c",
+		// 	length: 3
+		// };
+
+
+		// for(var i = 0; i < fakeArr.length ; i ++){
+		// 	console.log(fakeArr[i]);
+		// }
+
+
+		function func(a, b, c){
+			//arguments对象就是一个伪数组，他是函数中的一个变量
+			//当函数被调用的时候，传入函数的所有的实参，都会被存入arguments这个伪数组中
+
+			//一般在用户传入的参数个数不确定的情况下，就使用arguments来获取用户传入的参数，而不通过形参来获取
+			console.log(arguments);
+			console.log(func.arguments);
+
+			console.log(arguments === func.arguments);
+
+		}
+
+		func(1, 2, 3);
+
+
+		//arguments对象的属性
+		//callee: 指的就是arguments对象所在的函数！  一般用在函数中实现递归
+		//length: 指的就是用户在调用函数的时候，传入的实参的个数！
+
+		
+		// (function(){
+		// 	arguments.callee();
+		// })()
+
+
+		// function sum(){
+		// }
+
+		// sum(1);
+		// sum(1, 2);
+		// sum(1, 2, 3....)
+
+
+
+
+		// function test(){
+		// 	arguments.callee();
+		// }
+
+		// var f = test;
+		// test = 1;
+
+		// f();
+
+
+
+		// function test(a, b){
+		// 	if(arguments.length != test.length){
+		// 		throw "请检查您的参数个数是否正确！"
+		// 	}
+		// 	return a + b;
+		// }
+
+		// test(1);
+
+		// test(1, 2, 3);
+
+
+
+		//重载   参数不同，实现不同的功能！
+		function test(){
+			switch(arguments.length){
+				case 1: 
+					break;
+				case 2: 
+					break;
+				case 3: 
+					break;
+				case 4: 
+					break;
+				case 5: 
+					break;
+			}
+		}
+
+
+		// function test(a){
+
+		// }
+
+		// function test(a, b){
+
+		// }
+
+		// function test(a, b, c){
+
+		// }
+
+		// test(1,2);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

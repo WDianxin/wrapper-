@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1. hasOwnProperty
+		//判断对象本身是否拥有指定的属性
+		//对象.hasOwnProperty("属性名")
+
+
+		// var obj = {
+		// 	name: ""
+		// };
+
+		// //判断对象能否访问某个属性
+		// console.log("name" in obj);
+		// console.log("toString" in obj);
+
+		// console.log(obj.hasOwnProperty("toString"));
+		// console.log(obj.hasOwnProperty("name"));
+
+
+		//2. isPrototypeOf
+		//判断当前对象是否是另外一个对象的原型
+		// var obj1 = {};
+		// obj1.__proto__ = obj;
+
+		// console.log(obj.isPrototypeOf(obj1));
+
+
+		//3. propertyIsEnumerable
+		//判断属性是否属于对象本身，再判断属性能否被（for-in）遍历
+		var obj = {
+			name: ""
+		};
+
+		var obj1 = {
+			age: 18
+		}
+
+		//如何设置js中对象的属性不能被遍历！
+
+		obj.__proto__ = obj1;
+
+		for(var k in obj){
+			console.log(k);
+		}
+
+		// console.log(obj.propertyIsEnumerable("age"));
+
+
+		//4. toLocaleString toString 
+		//都是将对象转换成字符串
+		//toLocaleString是将对象转成本地格式的字符串
+		//toString是转成通用格式的字符串
+
+		// var obj = {};
+		// console.log(obj.toLocaleString())
+		// console.log(obj.toString())
+
+		var now = new Date();
+		console.log(now.toLocaleString())
+		console.log(now.toString())
+
+		//5. valueOf
+		//获取对象的值
+
+
+	</script>
+</head>
+<body>
+</body>
+</html>

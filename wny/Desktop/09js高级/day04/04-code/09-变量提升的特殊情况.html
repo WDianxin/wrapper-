@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	
+		//1. 函数同名的情况
+			//当在变量提升的时候，遇到函数同名的情况的时候，所有的函数都会被提升，但是后面的会把前面的给覆盖掉！
+
+		// func();
+
+		// function func(){
+		// 	console.log("第一个func");
+		// }
+
+		// function func(){
+		// 	console.log("第二个func");
+		// }
+
+		// function func(){
+		// 	console.log("第三个func");
+		// }
+
+		//2. 函数和变量同名的情况
+			//当函数和变量同名的时候，只提升函数，忽略掉变量声明
+
+		// console.log(a);
+		// function a(){}
+		// var a = 10;
+
+		// //提升后的代码
+		// function a(){}
+		// console.log(a);
+		// a = 10;
+
+		//3. 变量提升是分作用域的！
+		//这里是访问不到的，因为b只会被提升到a里面的最顶上！
+		// b();
+
+		// function a(){
+		// 	function b(){
+		// 		console.log("1");
+		// 	}
+		// }
+
+		//4. 变量提升是分段（script标签）的
+		// console.log(a);
+		// var b = 10;
+
+		//5. 条件式函数声明 （在条件语句中声明的函数，就是条件式函数声明）
+			//条件式函数声明在提升的时候，会被当做函数表达式来处理
+
+			//提升后的效果就是，只有函数名被提升了，函数体没有被提升
+		// a();
+		// console.log(a);
+		// if(false){
+		// 	function a(){
+		// 		console.log("我是一个条件式函数声明");
+		// 	}
+		// }
+
+		// //提升的时候的等效的代码
+		// a();
+		// console.log(a);
+		// if(true){
+		// 	var a = function(){
+		// 		console.log("我是一个条件式函数声明");
+		// 	}
+		// }
+
+		// //提升后的代码
+		// var a;
+		// a();
+		// console.log(a);
+		// if(true){
+		// 	a = function(){
+		// 		console.log("我是一个条件式函数声明");
+		// 	}
+		// }
+
+
+		// if(isDog){
+		// 	function bark(){
+		// 		console.log("汪汪汪");
+		// 	}
+		// }else{
+		// 	function bark(){
+		// 		console.log("喵喵喵");
+		// 	}
+		// }
+		// //如果要用到条件式函数声明，就用如下的代码进行代替！
+		// var bark = null;
+		// if(isDog){
+		// 	bark = function (){
+		// 		console.log("汪汪汪");
+		// 	}
+		// }else{
+		// 	bark = function (){
+		// 		console.log("喵喵喵");
+		// 	}
+		// }
+
+		//6. 函数形参在变量提升过程当中的处理
+			//在进行变量提升之前，形参的声明以及赋值其实已经完成
+			//所以形参的声明和赋值不参与变量提升
+
+		// function test(a){
+		// 	//var a = 10;
+		// 	console.log(a);
+		// 	function a(){};
+		// }
+
+		// test(10);
+
+		// // 提升后的代码
+		// function test(a){
+		// 	//var a = 10;
+
+		// 	function a(){};
+		// 	console.log(a);
+		// }
+
+		// test(10)
+
+
+		(function(a){
+			console.log(typeof a);
+			var a = "123";
+			function a(){};
+		})(100)
+		// //提升后的代码
+		// (function(a){
+		// 	//var a = 100;
+
+		// 	function a(){};
+		// 	console.log(typeof a);
+		// 	a = "123";
+		// })(100)
+
+
+		//在做变量提升的时候，依次去找变量以及函数的声明，将其放在作用域的最顶上
+		//其他的代码，赋值语句，调用语句，依次写在下面
+	</script>
+
+	<!--<script src="jquery.js"></script>-->
+	<script>
+		// console.log(b);
+		// function a(){
+		// }
+		// $
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

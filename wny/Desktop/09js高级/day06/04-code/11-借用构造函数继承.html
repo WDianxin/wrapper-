@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		
+		//原型继承
+		// function Person(){
+		// 	this.name = "吴彦祖";
+		// 	this.age = 18;
+		// }
+
+		// var p = new Person();
+
+		// function Student(){
+
+		// }
+		// Student.prototype = p;
+
+		// var stu = new Student();
+		// console.log(stu.name);
+
+
+		//借用构造函数继承
+		function Person(){
+			this.name = "吴彦祖";
+			this.age = 18;
+		}
+
+		function Student(){
+			Person.call(this);
+			//1. 调用了Person函数
+			//2. 把Person中的this改成了Student中的this， 这个this就是new创建出来的对象
+			//3. 执行Person中的代码， 通过this添加的所有的属性，就都添加给new创建出来的对象了
+			this.stuNo = 10086;
+		}
+
+		var stu = new Student();
+		console.log(stu);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

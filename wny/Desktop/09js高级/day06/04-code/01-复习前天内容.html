@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		//闭包
+		// function outer(){
+		// 	var data = "";
+		// 	function inner(){
+		// 	}
+		// 	return inner;
+		// }
+
+		// var  arr = [ 
+		// 	{ name: '张三1' },
+		// 	{ name: '张三2' },
+		// 	{ name: '张三3' },
+		// 	{ name: '张三4' }
+		// ];
+
+		// for(var i = 0; i < arr.length; i++){
+		// 	function outer(){
+		// 		var j = i;
+		// 		function inner(){
+		// 			console.log(j);
+		// 		}
+		// 		return inner();
+		// 	}
+		// 	arr[i].sayHello = outer();
+		// }
+
+		//1. 给函数提供一个私有的变量
+		//2. 保护变量
+
+		//缓存
+			//他是一个临时的存储空间，用来提升效率
+
+
+		// function fib(n){
+		// 	if(n == 1 || n == 2){
+		// 		return 1;
+		// 	}
+		// 	return fib(n - 1) + fib(n - 2);
+		// }
+
+		// var cache = [];
+
+		// function fib(n){
+		// 	var num = cache[n];
+		// 	if(num){
+		// 		return num;
+		// 	}else{
+		// 		if(n == 1 || n == 2){
+		// 			num = 1;
+		// 		}else{
+		// 			num = fib(n - 1) + fib(n - 2);
+		// 		}
+		// 		cache[n] = num;
+		// 		return num;
+		// 	}
+		// }
+
+		function createCache(){
+			var cache = {};
+			var keys = [];
+			return function(key, value){
+				if(value){
+					keys.push(key);
+					cache[key] = value;
+					if(keys.length > 20){
+						var delKey = keys.shift();
+						delete cache[delKey];
+					}
+				}else{
+					return cache[key];
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

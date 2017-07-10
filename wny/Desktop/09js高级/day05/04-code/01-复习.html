@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//arguments对象  
+		//作用域
+		// var num = 123;
+		// function f1(){
+		// 	console.log(num);
+		// }
+
+		// function f2(){
+		// 	var num = 456;
+		// 	f1();
+		// }
+		// f2();
+
+		//变量提升
+
+		// function bar() {
+		// 	var foo;
+		//     if(!foo) {
+		//         foo = 10;
+		//     }
+		//     alert(foo);
+		// }
+		// var foo;
+		// foo = 1;
+		// bar();
+
+		// function sum(n){
+		// 	if(n == 1){
+		// 		return 1;
+		// 	}
+		// 	return sum(n - 1) + n;
+		// }
+
+
+
+		function Foo() {
+			getName = function(){ alert(1); };
+			return this;
+		}
+
+		Foo.getName = function() { alert(2); };
+		Foo.prototype.getName = function(){ alert(3); };
+		var getName = function() { alert(4); };
+		function getName(){ alert(5); }
+
+
+		//提升
+		function Foo() {
+			getName = function(){ alert(1); };
+			return this;
+		}
+		function getName(){ alert(5); }
+		Foo.getName = function() { alert(2); };
+		Foo.prototype.getName = function(){ alert(3); };
+	 	getName = function() { alert(4); };
+
+
+		Foo.getName(); // ? 2
+		getName(); // ? 4
+		Foo().getName(); // ? 1
+		getName(); // ? 1
+
+		new Foo.getName(); // ? 2
+		new Foo().getName(); // ? 3
+		new new Foo().getName(); // ? 3
+	
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+	function createCache() {
+	    var keys = [];
+	    function cache( key, value ) {
+	    	//给key加空格的原因在于，cache函数有自己的属性 name length 
+	    	//我们的数据也是要存储到这个cache函数对象当中去的，如果出现了要存的数据的key和cache函数自己的属性重名的情况，就会存不进去数据
+	    	//所以给key拼接一个空格，这样就能将重名的问题解决，自己的key永远都不会和自带的重名，数据肯定可以存进去！
+	        if ( keys.push( key + " ") > 30 ) {
+	            delete cache[ keys.shift() ];
+	        }
+	        return (cache[ key + " " ] = value);
+	    }
+	    return cache;
+	}
+
+	var cache = createCache();
+	cache("name", {name: "吴彦祖"});
+
+	console.log(cache["name "]);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

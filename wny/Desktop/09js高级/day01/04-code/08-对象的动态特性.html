@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//当对象被创建完成之后，可以随时的为对象新增成员（属性和方法），这种特性就是对象的动态特性
+		var obj = {};
+		obj.name = "Jack";
+
+
+		//1. 点语法
+		//对象名.属性名 = 值
+
+		//2. [] 关联数组语法
+		//对象名[属性名] = 值
+
+
+		obj[{}] = "你猜我是啥！";
+		//会将{} 转换成字符串，作为属性名称
+		//obj[{}.toString()] = "你猜我是啥！";
+		//obj["[object Object]"] = "你猜我是啥！";
+
+		console.log(obj["[object Object]"]);
+
+		obj[[]] = "你猜我又是啥？";
+		console.log(obj[[]]);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

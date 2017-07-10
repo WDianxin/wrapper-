@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+		var divs = document.getElementsByTagName("div");
+		for(var i = 0; i < divs.length; i ++){
+			// divs[i].onclick = function(index){
+			// 	return function (){
+			// 		alert("我是第" + index+"个div");
+			// 	};
+			// }(i);
+
+			(function(index){
+				divs[i].onclick = function (){
+					alert("我是第" + index +"个div");
+				};
+			})(i);
+		}
+
+
+
+
+		for(var i = 0; i < 10; i ++){
+			setTimeout(function (j){
+				return function (){
+					console.log(j);
+				}
+			}(i), 1000);
+
+			function (j){
+				setTimeout(function (){
+					console.log(j);
+				}, 1000);
+			}(i);
+		}
+	</script>
+</body>
+</html>

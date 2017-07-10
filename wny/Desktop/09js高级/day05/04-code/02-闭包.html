@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//闭包
+			//闭： 关闭 封闭 闭合
+			//包： 包裹 包装 
+
+			//一个封闭的包裹结构
+
+		//闭包是指那些能够访问独立变量的函数
+
+
+		// function test(){
+		// 	var num = 123;
+		// }
+
+
+		//闭包要解决的问题是什么？
+			//如何在函数外面访问函数里面的内容
+
+		// function test(){
+		// 	var num = 123;
+		// 	return num;
+		// }
+
+		// var num1 = test();
+		// console.log(num1);
+
+		// num1 = 456;
+
+		// function test(){
+		// 	var num = 123;
+		// 	function inner(value){
+		// 		num = value;
+		// 		console.log(num);
+		// 	}
+		// 	return inner;
+		// }
+
+		// var f = test();
+		// f(456);
+
+		//闭包的基本模型
+		function outer(){
+			var data = "";
+			function inner(){
+				//可以直接写操作data的代码
+			}
+			//将这个内部函数返回，在outer函数外面，就可以通过返回的这个inner函数
+			//对outer里面的data进行操作！
+			return inner;
+		}
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

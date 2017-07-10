@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		// function outer(){
+		// 	var num = 123;
+		// 	//获取值的操作
+		// 	function inner(value){
+		// 		//如果用户传了参数，那么就证明是在设置值
+		// 		if(value){
+		// 			num = value;
+		// 		}else{
+		// 			//如果没有传参，就是在获取值
+		// 			return num;
+		// 		}
+		// 	}
+		// 	return inner;
+		// }
+
+		// var f = outer();
+
+		// //1. 获取函数里面的num 看一下当前的值
+		// console.log(f());
+
+		// //2. 设置里面的num的值
+		// f(456);
+
+		// //3. 看一自己刚才的设置有没有成功，重新获取一下
+		// console.log(f());
+
+
+
+
+		//闭包的变形
+		function outer(){
+			var num = 123;
+			var obj = {
+				getNum: function(){
+					return num;
+				},
+				setNum: function(value){
+					num = value;
+				}
+			}
+			return obj;
+		}
+
+		var o = outer();
+		console.log(o.getNum());
+		o.setNum(456);
+		console.log(o.getNum());
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

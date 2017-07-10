@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		//1. 删除没有使用var声明的变量！
+		//语法：  delete 变量名
+		//a = 10;
+		// var res = delete a;
+		// console.log(res);
+
+		//2. 删除对象的属性
+		//语法：  delete 对象名.属性名
+		//		  delete 对象名[属性名]
+		var obj = {
+			name: "刘德华",
+			age: 18
+		};
+
+		delete obj.name;
+		delete obj["age"];
+		console.log(obj.age);
+
+
+
+
+		// delete关键字是有返回值的, 表示删除是否成功, 不可靠！！！
+		// var obj = {};
+		// var res = delete obj.toString;
+		// console.log(res);
+		// console.log(obj.toString());
+
+
+
+		//访问一个不存在的变量，会报错！ xx is not defined
+		//访问一个对象不存在的属性，不会报错，会返回undefined
+		// var o = {};
+		// console.log(o.name);
+
+
+
+		var arr = [1, 2, 3, 4, 5];
+		delete arr[1];
+
+		//delete删除数组元素之后，其他元素的索引不会自动改变，数组长度也不会发生变化！
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

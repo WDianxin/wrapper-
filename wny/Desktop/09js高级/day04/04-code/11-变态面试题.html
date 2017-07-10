@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function Foo() {
+			getName = function(){ alert(1); };
+			return this;
+		}
+
+		Foo.getName = function() { alert(2); };
+		Foo.prototype.getName = function(){ alert(3); };
+		var getName = function() { alert(4); };
+		function getName(){ alert(5); }
+
+		//提升后的代码
+		// function Foo() {
+		// 	getName = function(){ alert(1); };
+		// 	return this;
+		// }
+		// function getName(){ alert(5); }
+		// Foo.getName = function() { alert(2); };
+		// Foo.prototype.getName = function(){ alert(3); };
+		// getName = function() { alert(4); };
+
+		Foo.getName(); // ? 2
+		getName(); // ? 4
+		Foo().getName(); // ? 1  var obj = Foo(); obj是window  obj.getName();
+		getName(); // ? 1
+
+
+		//考虑下面的代码执行结果的时候，不需要关注代码的功能，也就是最终创建了什么对象，只需要考虑有哪一句alert语句被执行了，即可！
+		
+		// 代码的执行顺序呢
+		// 考虑对象访问方法的时候，究竟访问的是哪个方法
+		new Foo.getName(); // ? 2
+		new Foo().getName(); // ? 3   //var obj = new Foo();
+		new new Foo().getName(); // ? 3
+
+		// var obj = new Foo();
+		// new obj.getName();
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

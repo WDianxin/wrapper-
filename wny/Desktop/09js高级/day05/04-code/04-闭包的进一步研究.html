@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		function outer(){
+			var num = Math.random();
+			function inner(){
+				return num;
+			}
+			return inner;
+		}
+
+		// var f = outer();
+
+		// console.log(f());
+		// console.log(f());
+		// console.log(f());
+
+		console.log(outer()());
+		console.log(outer()());
+		console.log(outer()());
+		console.log(outer()());
+
+		//闭包在使用的时候，一般情况下只会将外部函数调用一次，以后多次使用返回的内部函数来操作外部函数中的变量，这样才能保证多次操作的都是同一个变量！
+
+		//如果多次调用外部函数，每次调用都会重新产生一个空间，重新声明一个变量，那么用户多次访问到的变量就不能保证是
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//作用域
+			//变量起作用的范围，就是变量的作用域
+
+		//在JS当中有且只有函数可以创建作用域！
+
+		//全局作用域：直接写在script标签中的内容，就属于全局作用域的范围
+		//局部作用局：写在函数中的内容，属于局部作用域的范围
+
+		//块级作用域: （JS中没有块级作用域）通过代码块限定的作用域，就是块级作用域
+
+
+		//词法作用域（静态作用域）： 是作用域的分类！  js中的作用域就属于词法作用域
+			//函数中变量的访问，只和函数声明的位置有关系，也就是和代码的声明书写结构有关系，和函数的具体调用，运行时的状态没有关系，这种作用域就是词法作用域。
+
+		//和词法作用域相对的作用域叫做动态作用域。
+
+
+		var num = 123;
+		function f1(){
+			console.log(num);
+		}
+
+		function f2(){
+			var num = 456;
+			f1();
+		}
+
+		f2();
+
+
+		// if(true){
+		// 	var a = 10;
+		// }
+
+		// for(var i = 0; i < 3; i++){
+		// 	var a = 10;
+		// }
+
+		// console.log(i);
+
+		// function test(){
+		// 	var a = 10;
+		// }
+
+		// console.log(a);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

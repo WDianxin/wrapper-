@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		var arr = [1, 2, 3, 4, 5];
+		var dbArr = [];
+
+		// for(var i = 0; i < arr.length; i ++){
+		// 	dbArr[i] = arr[i] * 2;
+		// }
+
+		//用来提供一种快捷的遍历数组的方法   可以参考jQuery的each方法
+		// arr.forEach(function(value, index, arr){});
+			//value：当前正在遍历的元素
+			//index：当前正在遍历的元素的索引（下标）
+			//arr: 当前正在被遍历的数组
+
+		// arr.forEach(function(value, index, arr){
+		// 	console.log(index + "--->" + value);
+		// 	console.log(arr);
+		// });
+
+		arr.forEach(function(value, index, arr){
+			dbArr.push(value * 2);
+		})
+
+		//forEach方法的实现原理
+		Array.prototype.myForEach = function(callback){
+			for(var i = 0; i < this.length; i++){
+				callback(this[i], i, this);
+			}
+		}
+
+		arr.myForEach(function(value, index, arr){
+			console.log(value);
+		});
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

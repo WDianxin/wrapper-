@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//DRY： Dont repeat yourself
+
+		//创建对象的方式
+		//1. 对象字面量
+		var obj = {
+			name: "张学友",
+			age: 18
+		};
+		// 复用性比较差
+
+		//2. 内置构造函数
+		var obj = new Object();
+		obj.name = "薛之谦";
+		obj.age = 81;
+		//复用性比较差
+
+
+		function createPerson(){
+			var obj = new Object();
+			obj.name = "薛之谦";
+			obj.age = 81;
+			return obj
+		}
+		var p = createPerson();
+		var p1 = createPerson();
+
+		//3. 自定义构造函数
+		function Person(){
+			this.name = "";
+			this.age = 18;
+		}
+
+		var p = new Person();
+		var p2 = new Person();
+
+		//复用性相对来说较好！
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

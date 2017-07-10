@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>我是第1个div</div>
+	<div>我是第2个div</div>
+	<div>我是第3个div</div>
+	<div>我是第4个div</div>
+	<div>我是第5个div</div>
+	<div>我是第6个div</div>
+	<div>我是第7个div</div>
+	<div>我是第8个div</div>
+	<div>我是第9个div</div>
+	<div>我是第10个div</div>
+	<script>
+		//1. 获取div
+		// var divs = document.getElementsByTagName("div");
+		//2. 遍历divs注册点击事件
+		// for(var i = 0; i < divs.length; i ++){
+		// 	var div = divs[i];
+		// 	div.onclick = function(){
+		// 		//下面的代码是在用户点击div的时候才执行的
+		// 		//用户在点击div的时候，for循环已经执行完毕了
+		// 		//i 就已经变成了最后一个值 10
+		// 		//所以每次点击调用下面方法的时候，访问都是已经变成了10的i
+		// 		alert("我是第" + i + "个div");
+		// 	}
+		// }
+
+
+
+		// 最简单直接的解决方案，就是给div加上一个自定义属性
+		// var divs = document.getElementsByTagName("div");
+		// //2. 遍历divs注册点击事件
+		// for(var i = 0; i < divs.length; i ++){
+		// 	var div = divs[i];
+		// 	div.index = i;
+		// 	div.onclick = function(){
+		// 		alert("我是第" + this.index + "个div");
+		// 	}
+		// }
+
+
+		//使用闭包来解决这个问题
+
+		//目标： 不能使用全局的i
+
+		//在循环中，给div注册点击事件的时候，我们给这个事件处理函数一个私有的变量，用来保存循环当次i的值，以后在点击事件被触发的时候，访问的就是我们再循环保存好的这个私有的变量，所以能够实现效果！
+
+		var divs = document.getElementsByTagName("div");
+		//2. 遍历divs注册点击事件
+		for(var i = 0; i < divs.length; i ++){
+			var div = divs[i];
+
+			//outer在这里就是为了创建一个拥有私有的变量的函数出来
+			function outer(){
+				var index = i;
+				function inner(){
+					alert("我是第" + index+"个div");
+				}
+				return inner;
+			}
+
+			var f = outer();
+
+			//给oncick赋值的东西，其实就是刚才通过outer创建的拥有私有变量的函数！
+			div.onclick = f;
+			// div.onclick = funciton(){
+			// };
+		}
+
+	</script>
+</body>
+</html>

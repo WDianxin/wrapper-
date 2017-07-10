@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		//1. 给函数一个私有的变量，这个变量只有函数本身能够使用，别人都不能使用
+		// function outer(){
+		// 	var list = [];
+		// 	function getChildren(){
+
+		// 	}
+		// }
+
+		// function outer(){
+		// 	var a = 10;
+		// 	function test(){
+
+		// 	}
+		// }
+
+
+		//2. 保护变量，给变量的赋值提供校验逻辑！
+
+		//如果直接将变量声明在全局，那么就失去了对这个变量的控制权，用户可以对这个变量进行任意赋值！
+
+		//如果将变量放在闭包当中，外界用户想要对这个变量赋值，就必须通过我们提供的内部函数，我们可以在这个内部函数中添加一些校验的逻辑，来保证这个变量赋值的合理合法性！
+
+		function outer(){	
+			var name = "潘明";
+			var yanzhi = 999999999999999999999999999;
+			return {
+				setYanZhi: function(value){
+					if(value < 9999999999999999999){
+						value = 999999999999999999;
+					}
+					yanzhi = value;
+				}
+			}
+		}
+		
+		var o = outer();
+
+		o.setYanZhi(-238497892347213647826347264);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

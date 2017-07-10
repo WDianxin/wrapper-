@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//立即执行函数表达式  IIFE    Immediately Invoked Function Expression
+
+		// (function(){}());
+		// (function(){})();
+
+		+ function(){
+			console.log("执行了");
+		}();
+
+		- function(){
+			console.log("执行了");
+		}();
+		
+		! function(){
+			console.log("执行了");
+		}();
+
+		~ function(){
+			console.log("执行了");
+		}();
+
+		// var func = function(){}();
+
+		// setTimeout(function(){}(), 1000)
+
+
+		//red 0  green 0   blue 0
+	</script>
+</head>
+<body>
+	
+	<input type="checkbox" value="1" id="red"> <label for="red">红</label>
+	<input type="checkbox" value="2" id="green"><label for="green">绿</label>
+	<input type="checkbox" value="4" id="blue"><label for="blue">蓝</label>
+
+	var color = 1 | 2 | 4;
+	var color = 1;
+	var color = 2 | 4;
+
+	color & 1 == 1;
+	color & 2 == 2;
+	color & 4 == 4;
+</body>
+</html>

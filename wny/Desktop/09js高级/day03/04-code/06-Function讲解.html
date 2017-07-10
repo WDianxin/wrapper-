@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type = "text/template" id="code">
+		var result = 0;
+		for(var i = 0; i < a.length; i ++){
+			result += a[i];
+		}
+		return result;
+	</script>
+
+	<script>
+		// var func = new Function();
+
+		//Function 是一个构造函数，可以用来创建 函数对象
+		//js中所有的函数(包括Function本身)，都可以看做是使用Function构造函数创建出来！
+
+		// var obj = {}; // var obj = new Object();
+		// function 函数名(){}   //var 函数名 = new Function();
+
+
+		// Object  Array  Date  function Person(){}
+
+
+
+		//Function可以用来创建函数
+
+		//1. 如果不给Function传递参数，那么创建出来的就是一个空函数
+		// var func = new Function();
+		// console.log(func);
+
+
+		//2. 传递一个参数，这个参数就是函数的函数体 这个参数是字符串类型的
+		// var func1 = new Function("console.log(123);console.log(456);");
+		// func1();
+		// console.log(func1);
+
+
+
+		//3. 传递多个参数的时候，最后一个参数为，函数体，之前的所有的参数，形参名，
+
+		// var sum = new Function("a", "b", "return a + b;");
+		// console.log(sum(1, 2));
+
+		// var str = `a
+		// b`;2
+
+		// var str = "a\
+		// b\
+		// c";
+
+		// var sum = new Function("a", 
+		// 	"var result = 0; \
+		// 	for(var i = 0; i < a.length; i++){ \
+		// 		result += a[i]; \
+		// 	} \
+		// 	return result;");
+
+
+		var codeStr = document.getElementById("code").innerHTML;
+		var sum = new Function("a", codeStr);
+
+		// function sum(a){
+		// 	var result = 0;
+		// 	for(var i = 0; i < a.length; i ++){
+		// 		result += a[i];
+		// 	}
+		// 	return result;
+		// }
+
+		var arr = [1, 2, 3, 4, 5];
+
+		// console.log(sum(arr));
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

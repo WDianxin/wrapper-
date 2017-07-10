@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		//1. 原型是什么？
+			//当构造函数被创建出来的时候，系统会默认的帮这个构造函数创建并且关联一个空的对象，这个空的对象，就是原型
+
+		//2. 原型的作用是什么？
+			//原型中所有的属性和方法，可以被和其关联的构造函数所创建出来的所有的对象共享
+
+		//3. 如何访问到原型
+			//构造函数.prototype
+
+		function Pig(){
+			
+		}
+
+		function Person(){
+			this.name = "王力宏";
+			this.age = 18;
+		}
+
+		// console.log(Person.prototype)
+
+		Person.prototype.gender = "male";
+		Person.prototype.sayHello = function(){
+			console.log("我是原型里面的方法");
+		}
+
+		var p = new Person();
+
+		console.log(p.gender);
+		p.sayHello();
+
+
+		var p1 = new Person();
+		console.log(p1.gender);
+		p1.sayHello();
+
+
+		console.log(p.sayHello === p1.sayHello);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

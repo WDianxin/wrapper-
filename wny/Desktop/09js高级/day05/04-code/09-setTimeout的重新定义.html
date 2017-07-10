@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		//setTimeout， 至少在指定的时间后执行指定的代码！
+
+
+		//js是单线程的，同时只能干一件事
+		
+		//js中的任务，分为两类
+			//1. 主要任务
+			//2. 次要任务(setTimeout setInterval 事件)
+
+		//事件队列，js代码在执行主要任务的时候，会将所有遇到的次要任务放到一个叫做事件队列的容器当中去，当主要的任务执行完毕之后，才会去这个容器中执行次要的任务
+
+		for(var i = 0; i < 10; i++){
+			setTimeout(function(){
+				console.log(i);
+			}, 0)
+		}
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

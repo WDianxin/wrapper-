@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//原型的使用方式
+
+		function Person(){
+
+		}
+
+		//1. 利用对象的动态特性，为原型对象新增属性和方法
+			//这种方式是在 系统默认创建的原型中做更改，新增属性方法
+		// Person.prototype.sayHello = function(){
+
+		// };
+
+		// Person.prototype["sayHi"] = function(){
+
+		// }
+
+		//2. 直接为构造函数.prototype赋值
+			//这种方式，是自己创建一个对象，这个对象中有我们自己的属性和方法，将这对象赋值给构造函数.prototype作为原型
+		Person.prototype = {
+			sayHello: function(){
+				console.log("Hello");
+			},
+			calssNumber: "219",
+			sayHi: function(){
+				console.log("Hi");
+			}
+		}
+
+		var p  = new Person();
+		p.sayHello();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

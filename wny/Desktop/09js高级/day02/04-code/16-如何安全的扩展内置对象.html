@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//我想随便创建一个数组出来，都可以直接使用该数组对象.sayHello调用方法
+
+		// Array.prototype.sayHello = function(){
+		// 	console.log("我是一个小数组！！");
+		// }
+
+		// var arr = [];   //var arr = new Array();
+
+		// arr.sayHello();
+
+		// var arr1 = [];
+
+		// arr1.sayHello();
+
+
+
+
+		// Array.prototype.sayHello = 123;
+
+		// var arr3 = new Array;
+		// arr3.sayHello();
+
+		//如果直接在内置对象上进行修改，修改Array，或者说修改Array.prototype, 由于Array，Array.prototype是被所有人共享的，大家都在使用，自己的修改会对别人产生影响，如果别人和我们做了一样的修改，那么就会产生冲突！！ 所以直接修改内置对象的方式不可取！！！
+
+
+		//我们可以自己定义一个构造函数，让这个构造函数的原型,prototype很属性指向一个数组对象，那么之后对于这个数组对象的更改，不会影响到别人，而且，数组对象中有数组所有的方法， 我们通过自己的构造函数创建出来的对象，就既有我们自己新增的方法，又有数组本身的方法！
+
+
+		function MyArray(){
+		}
+
+		MyArray.prototype = [];
+
+		MyArray.prototype.sayHello = function(){
+			console.log("我又是一个小数组！！")
+		}
+
+		var arr = new MyArray();
+		arr.sayHello();
+		arr.push(1);
+
+
+		// var arr1 = [];
+		// // arr1.sayHello();
+
+		// Array.prototype.sayHello = 123;
+		// arr.sayHello();
+
+
+
+		var arr = [1, 2, 3];
+		arr.sum();
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

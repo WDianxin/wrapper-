@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>div的内容
+		<p>P的内容
+			<span>span的内容</span>
+			<span>span的内容</span>
+			<span>span的内容</span>
+		</p>
+		<p>P的内容
+			<span>span的内容</span>
+			<span>span的内容</span>
+			<span>span的内容</span>
+		</p>
+		<p>P的内容
+			<span>span的内容</span>
+			<span>span的内容</span>
+			<span>span的内容</span>
+		</p>
+	</div>
+	<div>div的内容
+		<p>P的内容
+			<span>span的内容</span>
+			<span>span的内容</span>
+			<span>span的内容</span>
+		</p>
+		<p>P的内容
+			<span>span的内容</span>
+			<span>span的内容</span>
+			<span>span的内容</span>
+		</p>
+		<p>P的内容
+			<span>span的内容</span>
+			<span>span的内容</span>
+			<span>span的内容</span>
+		</p>
+	</div>
+	<div>div的内容
+		<p>P的内容
+			<span>span的内容</span>
+			<span>span的内容</span>
+			<span>span的内容</span>
+		</p>
+		<p>P的内容
+			<span>span的内容</span>
+			<span>span的内容</span>
+			<span>span的内容</span>
+		</p>
+		<p>P的内容
+			<span>span的内容</span>
+			<span>span的内容</span>
+			<span>span的内容</span>
+		</p>
+	</div>
+	<script>
+		//原生js当中没有获取所有后代元素的API
+
+		//但是有获取子代的元素的属性   children childNodes
+
+		// var list = [];
+
+		function getChildren(ele){
+			var list = [];
+			//1. 获取元素的所有的子代元素
+			var children = ele.children;
+			//2. 遍历获取到的子代元素
+			for(var i = 0; i < children.length; i ++){
+				var child = children[i];
+				list.push(child);
+				//3. 获取当前这个子代元素的所有的子元素
+
+				//getChildren作用就获取子代元素，会有返回值
+				//用temp接收到返回值之后，就是子元素的所有的子元素
+				var temp = getChildren(child);
+				//list里面暂时存的只有div，所以需要将获取到的div的子元素一起放到这个list里面，就相当于是所有的后代元素了
+				list = list.concat(temp);
+			}
+			return list;
+		}
+
+		var children = getChildren(document.body);
+
+		for(var i = 0; i < children.length; i ++){
+			children[i].style.border = "1px solid red";
+		}
+	</script>
+</body>
+</html>

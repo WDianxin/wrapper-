@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1. 封装
+			//将功能的具体实现封装在对象内部，只对外部暴露接口，外部在使用的时候，只需要考虑接口怎么使用，不需要考虑内部功能的具体实现，这就是封装。
+
+		//2. 继承
+			//一个对象没有一些属性和方法，另外一个对象有，拿过来使用，就是实现了继承！
+
+			var obj = {};
+			var obj1 = {
+				name: "",
+				age: 18
+			};
+
+			//混入式继承 （mix-in）
+			for(var k in obj1){
+				obj[k] = obj1[k];
+			}
+
+		//3. 多态
+			//js中没有多态！！！
+
+			//在强类型语言中，首先要有继承关系，父类的变量指向子类的对象，就是多态
+
+		// class Animal{
+
+		// }
+
+		// class Dog:extend Animal{
+		// 	public void bark(){
+		// 		console.log("汪汪汪");
+		// 	}
+		// }
+
+		// class Cat:extend Animal{
+		// 	public void bark(){
+		// 		console.log("喵喵喵");
+		// 	}
+		// }
+
+		// class Pig:extend Animal{
+		// 	public void bark(){
+		// 		console.log("哼哼哼");
+		// 	}
+		// }
+
+		// Animal d = new Dog();
+		// d.bark();
+		// Animal c = new Cat();
+		// c.bark();
+		// Animal p = new Pig();
+		// p.bark();
+
+
+
+		// function bark(Aniaml d){
+		// 	d.bark();
+		// }
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

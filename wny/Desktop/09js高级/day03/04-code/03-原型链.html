@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//原型链
+		//每个对象都有原型，原型也是一个对象，所以原型也有自己的原型，这样就形成了以个原型组成的链条，称为原型链
+
+		// var obj = {};
+		//obj对象的原型就是 obj.__proto__
+		//obj对象的原型的原型是  obj.__proto__.__proto__
+
+		function Person(){
+
+		}
+
+		var p = new Person();
+
+		//p 的原型  就是  Person.prototype  也就是  p.__proto__
+		//p 的原型 的原型 就是 Person.prototype.__proto__   p.__proto__.__proto__
+
+
+		var arr = [];  //var arr = new Array();
+
+
+		var now = new Date();
+
+
+		//属性搜索原则：
+			//当使用一个对象去访问对象的属性的时候，遵守如下原则：
+				//1. 首先在对象本身中，进行查找，如果找到了，就直接使用
+				//2. 如果没有找到，就去原型中进行查找，如果找到了，就直接使用
+				//3. 如果没有找到，就继续沿着原型链向上查找，直到null
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//作用域链
+			//函数可以创建作用域, 函数中可以声明函数，这样就行成了作用域前套作用域的一个链式的访问结构，称作作用域链！
+
+
+		//变量的访问规则（搜索原则）
+			//当使用一个变量的时候，遵守如下的规则
+			//1. 现在使用变量的作用域中进行查找，如果找到了该变量的声明，就直接使用该变量，
+			//2. 如果没有找到，就去上一级作用域中进行查找,如果找到了该变量的声明，就直接使用该变量，
+			//3. 如果没有找到，就继续沿着作用域链向外查找，直到找到全局作用域为止
+
+
+		function f1(){
+			// var a = 10;
+			function f2(){
+				function f3(){
+					console.log(a);
+				}
+			}
+		}
+
+		var num = 123;
+		// function f1(){
+		// 	var a = 10;
+		// 	num;
+		// 	function laowang(){
+		// 		var wifi = 456;
+		// 		a
+		// 	}
+
+		// 	function laosong(){
+		// 		a
+		// 		wifi
+		// 	}
+		// }
+
+		// function f2(){
+		// 	num;
+		// }
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

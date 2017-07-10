@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		//1. js代码执行是分阶段的
+			//1.1. 预解析阶段
+			//1.2. 执行阶段
+
+
+		//2. 变量提升
+			//在js代码的预解析阶段，系统会将所有的变量的声明以及函数的声明提升，提升到其所在的作用域的最顶上
+
+		// test();
+
+		// function test(){
+		// 	console.log("你猜我会不会被执行");
+		// }
+
+		// //提升后的代码如下
+		// function test(){
+		// 	console.log("你猜我会不会被执行");
+		// }
+
+		// test();
+
+
+		// console.log(a);
+		// var a = 10;
+
+		// //提升后的代码
+		// var a;
+		// console.log(a);
+		// a = 10;
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

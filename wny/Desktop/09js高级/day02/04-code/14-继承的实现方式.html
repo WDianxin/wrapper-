@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		//1. 混入式继承
+		// var wangsicong = {};
+		// var wangjianlin = {
+		// 	money: 9999999999999,
+		// 	manageCompany: function(){
+		// 		console.log("我的地盘我做主！！")
+		// 	}
+		// };
+
+		// // for(var k in wangjianlin){
+		// // 	wangsicong[k] = wangjianlin[k];
+		// // }
+
+		// inherit(wangsicong, wangjianlin);
+
+		// console.log(wangsicong.money);
+
+
+		// function inherit(son, parent){
+		// 	for(var k in parent){
+		// 		son[k] = parent[k];
+		// 	}
+		// }
+
+		//2. 原型继承
+			//2.1. 直接将要继承的对象，赋值给构造函数的prototype属性，这样通过构造函数创建出来的所有的对象，就都继承了这个要继承对象！
+
+		function WangSons(){
+
+		}
+
+		var wangjianlin = {
+			money: 9999999999999,
+			manageCompany: function(){
+				console.log("我的地盘我做主！！")
+			}
+		};
+
+		// 原型继承();
+
+		// WangSons.prototype = wangjianlin;
+		// var wangsicong  = new WangSons();
+		// wangsicong.manageCompany();
+		// var wangsicong1  = new WangSons();
+		// wangsicong1.manageCompany();
+		// var wangsicong2  = new WangSons();
+		// wangsicong2.manageCompany();
+
+			//2.2 利用混入的方式，将所要继承的对象的所有的属性和方法加到构造函数的原型中去，那么通过构造函数创建出来的所有的对象，就都继承了这个对象
+
+			// function WangSons(){
+			// }
+
+			// var wangjianlin = {
+			// 	money: 9999999999999,
+			// 	manageCompany: function(){
+			// 		console.log("我的地盘我做主！！")
+			// 	}
+			// };
+
+			// for(var k in wangjianlin){
+			// 	WangSons.prototype[k] = wangjianlin[k];
+			// }
+
+		// wangsicong.__proto__ = wangjianlin;
+		// wangsicong.money
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

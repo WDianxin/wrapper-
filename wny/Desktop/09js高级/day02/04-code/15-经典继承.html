@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		// function Peroson(){
+
+		// }
+
+		// var obj = {
+		// 	name: "",
+		// 	age: 18,
+		// }
+
+		// Person.prototype = obj;
+
+		// var p = new Person();
+
+
+		//Object.create();
+
+		//var obj = Object.create(obj1);
+		//创建出来一个新的对象obj, 将这个obj能够访问的原型设置为obj1
+		//其实也就是实现了 obj 继承了 obj1
+		var wangjianlin = {
+			money: 9999999999999,
+			manageCompany: function(){
+				console.log("我的地盘我做主！！")
+			}
+		};
+
+		var wangsicong = Object.create(wangjianlin);
+
+		// console.log(wangsicong.money);
+
+		// console.log(wangsicong.__proto__ === wangjianlin);
+
+
+		//Object.create方法有兼容性问题！
+
+		//如何处理Object.create的兼容性问题
+		// if(Object.create){
+		// 	var p = Object.create(obj);
+		// }else{
+		// 	function F(){}
+		// 	F.prototype = obj;
+		// 	var p = new F();
+		// }
+
+		function myCreate(obj){
+			if(Object.create){
+				return Object.create(obj);
+			}else{
+				function F(){}
+				F.prototype = obj;
+				return new F();
+			}
+		}
+
+		var wangsicong  = myCreate(wangjianli);
+
+
+
+
+
+
+
+
+
+
+		//扩展：
+
+		if(!Object.create){
+			Object.create = function(obj){
+				function F(){}
+				F.prototype = obj;
+				return new F();
+			}
+		}
+
+
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

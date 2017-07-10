@@ -1,0 +1,216 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:16-总结</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="javascript-1-">JavaScript高级 第1天</h1>
+<h2 id="javascript-">JavaScript的组成</h2>
+<ul>
+<li>DOM: Document Object Model 提供了一整套操作页面元素的API</li>
+<li>BOM: Browser Object Model 提供了一整套操作浏览器相关内容的API</li>
+<li>ECMAScript: js的语法规范以及标准！</li>
+</ul>
+<h2 id="javascript-">JavaScript中的数据类型</h2>
+<h3 id="-">基本数据类型</h3>
+<ol>
+<li><code>string</code></li>
+<li><code>number</code></li>
+<li><code>boolean</code></li>
+</ol>
+<h3 id="-">复合数据类型</h3>
+<ol>
+<li>Object</li>
+<li>function</li>
+<li>Array</li>
+<li>Date</li>
+<li>RegExp</li>
+<li>String</li>
+<li>Number</li>
+<li>Boolean</li>
+<li>Math</li>
+</ol>
+<h3 id="-">空类型</h3>
+<ol>
+<li><code>null</code></li>
+<li><code>undefined</code></li>
+</ol>
+<h3 id="-">获取数据类型的方式</h3>
+<pre><code class="lang-js">var res = typeof 数据;
+//typeof关键字可以用来获取数据的数据类型，他的返回值表示数据的数据类型，返回值是一个字符串类型的值
+
+//typeof关键字获取除了function以外所有的引用类型的数据的类型的时候，获取到的都是 object
+
+//typeof null 获取到的是 object
+//typeof undefined 获取到的是 undefined
+</code></pre>
+<h2 id="-">全等和等于的区别</h2>
+<h3 id="-">全等</h3>
+<p>即判断数据的数据类型是否一致，也判断值是否一致</p>
+<h3 id="-">等于</h3>
+<p>只判断值是否一样</p>
+<h3 id="-">引用类型和值类型参与运算的时候的规则</h3>
+<pre><code class="lang-js">console.log([] == ![]);
+//1. console.log([] == false);
+//2. console.log([].valueOf() == false);
+//3. console.log([].toString() == false);
+//4. console.log(&quot;&quot; == false);
+
+console.log({} + 1);
+console.log({} == !{});
+</code></pre>
+<p>当值类型和数据和引用类型的数据发生运算的时候，首先需要调用该引用类型数据的valueOf方法，获取返回之后，尝试进行运算，如果可以运算，则得出结果，如果不能运算，继续调用该引用类型数据的toString方法，获取返回值，参与运算！</p>
+<h2 id="in-">in关键字的使用</h2>
+<h3 id="for-in-">for-in 用来遍历对象的属性</h3>
+<pre><code class="lang-js">for(var k in obj){
+    console.log(k); //k 代表的就是对象的属性，这个k是字符串类型
+}
+</code></pre>
+<h3 id="-in-">属性名 in 对象  判断对象能否访问指定的属性</h3>
+<pre><code class="lang-js">var obj = {name: &quot;xyz&quot;};
+console.log(&quot;name&quot; in obj);
+</code></pre>
+<h2 id="delete-">delete关键字的使用</h2>
+<h3 id="-var-">删除没有使用var声明的变量</h3>
+<pre><code class="lang-js">delete 变量名;
+</code></pre>
+<h3 id="-">删除对象的属性</h3>
+<pre><code class="lang-js">delete 对象名.属性
+delete 对象名[属性]
+</code></pre>
+<blockquote>
+<p>tip: 访问一个不存在的变量，会报错，xx is not defined
+访问一个对象不存在的属性，不会报错，会返回undefined</p>
+</blockquote>
+<h2 id="-">逻辑中断</h2>
+<h3 id="-">||中断</h3>
+<pre><code class="lang-js">表达式1||表达式2
+//如果表达式1为真，则返回表达式1，否则返回表达式2
+</code></pre>
+<h3 id="-">&amp;&amp; 中断</h3>
+<pre><code class="lang-js">表达式1&amp;&amp;表达式2
+//如果表达式1为假，则返回表达式1，否则返回表达式2
+</code></pre>
+<h2 id="break-continue">break和continue</h2>
+<h3 id="break-">break 跳出整个循环，继续执行循环之后的代码</h3>
+<h3 id="continue-">continue 跳出本次循环， 执行下次循环</h3>
+<h2 id="-">异常处理语句</h2>
+<pre><code class="lang-js">try{
+    //可能出现错误的代码
+}catch(e){
+    //出错后的处理代码
+    //e 就出错的错误信息
+}finally{
+    //无论是否出错都会执行的代码
+    //一般情况下放释放资源的代码
+}
+</code></pre>
+<h3 id="-">手动抛出异常</h3>
+<pre><code class="lang-js">throw anything;
+//throw可以手动抛出异常，可以抛出任何东西，throw出去的内容如果有trycatch语句，就会被catch捕获，catch中的e就是我们跑出去的异常信息
+</code></pre>
+<h2 id="-">引用类型和值类型</h2>
+<h3 id="-">值类型</h3>
+<p>存储的是数据本身的这种数据，就是值类型的数据</p>
+<h3 id="-">引用类型</h3>
+<p>存储的是数据的地址，数据单独存储，这种数据，就是引用类型的数据</p>
+<h3 id="-">值类型和引用类型的赋值特征</h3>
+<h4 id="-">值类型</h4>
+<p>值类型赋值，会将当前变量存储的数据直接复制一份交给新的变量，此时两个变量内容相同，但是存储空间完全独立，互不影响</p>
+<p>引用类型赋值， 会将当前变量存储的数据的地址复制一份，交给新的变量，两个变量指向同一个对象，修改其中一个，另外一个也受到影响</p>
+<h2 id="-">对象的动态特性</h2>
+<p>在对象创建完成之后，可以随时为对象新增成员（属性和方法）这种特性就是动态特性</p>
+<h2 id="-">调试工具的使用（练习）</h2>
+<h2 id="-">面向对象的基本概念</h2>
+<h3 id="-">面向过程</h3>
+<p>解决问题的思维方式， 将解决问题的关注点方法在了解决问题的每一个详细的步骤上！</p>
+<h3 id="-">面向对象</h3>
+<p>解决问题的思维方式， 将解决问题的关注点方法在了解决问题所需要的一系列的对象身上！</p>
+<h3 id="-">面向对象和面向过程的关系</h3>
+<p>面向对象其实就是对面向过程的封装</p>
+<h3 id="-">什么是对象</h3>
+<p>万物皆对象
+js中，无序的键值对集合，就是对象！</p>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

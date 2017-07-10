@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	<input type="text" id="keyword"><button id="search">搜索</button>
+	
+	<script>
+
+		var data = [
+			"上海",
+			"上海传智播客",
+			"上海黑马程序员",
+			"上海浦东吴彦祖",
+			"上海徐汇刘德华",
+			"北京朝阳陈冠希",
+			"北京中南海",
+			"北京人民大会堂",
+			"中南海香烟",
+			"人民教育出版社",
+			"南海观音菩萨",
+			"南海是中国的"
+		];
+
+		var btn = document.querySelector("#search");
+		var txt = document.querySelector("#keyword")
+		btn.onclick = function(){
+			var keyword = txt.value;
+
+			var result = data.filter(function(value){
+				return value.indexOf(keyword) != -1;
+			})
+			console.log(result);
+			// for(var i = 0; i < data.length; i ++){
+			// 	if(data[i].indexOf(keyword) != -1){
+			// 		console.log(data[i]);
+			// 	}
+			// }
+		}
+
+
+		//filter方法的实现原理
+		Array.prototype.myFilter = function(callback){
+			var result = [];
+			for(var i = 0; i < this.length; i ++){
+				if(callback(this[i], i)){
+					result.push(this[i]);
+				}
+			}
+			return result;
+		}
+	</script>
+</body>
+
+</html>

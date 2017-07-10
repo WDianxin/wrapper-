@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		function test(){
+			// console.log(test.arguments);
+			console.log(test.caller);	
+		}
+		// test();
+
+		// function f1(){
+		// 	test();
+		// }
+
+		// f1();
+
+		//下面这种通过函数表达式创建的函数的name属性，在不同的浏览器中表现不一样
+		// var test = function(){};
+
+		//下面这种通过函数表达式创建的函数的name属性是anonymous
+		// var test = new Function();
+
+		//1. name
+			//函数具有name属性，表示当前的函数名
+
+		//2. length
+			//函数的形参个数！！
+
+		//3. arguments
+			//在函数调用的时候，会将所有的实参存入这个arguments对象中
+			//需要通过 函数名.arguments来访问
+			//需要在函数中去使用
+
+		//4. caller
+			//函数如果是在另外一个函数中被调用的，那么这个caller就指向的是这个外部函数, 如果是全局调用的则是null
+			//需要在函数中使用			
+
+
+
+		//如何给函数对象添加属性？
+		//可以将函数看做正常的对象，利用对象的动态特性为函数新增属性和方法
+		// test.age = 19;
+		// test.sayHello = function(){
+		// 	console.log("函数也有方法了！");
+		// }
+
+		// delete test.name;
+		//函数自带的属性没法改
+		// test.name = "123";
+
+		
+		//如何设置对象的属性不能被赋值！
+		// var obj = {
+		// 	name: "潘明",
+		// 	shenfen: "帅哥"
+		// }
+		// obj.shenfen = "大帅哥";
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

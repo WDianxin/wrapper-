@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//相等 ==
+		//只判断值是否相同
+		// var obj = {};
+		// var obj1 = {};
+		// obj == obj1;
+		//对象类型的数据进行对比，是比较的存储地址
+		// console.log({} == {});
+
+		// console.log(1 === "1");
+
+		// console.log(NaN == NaN);
+
+		// console.log(null === undefined);
+
+		//全等 ===
+		//先判断类型是否一致，然后再判断值是否相等
+
+
+
+
+		//面试题
+		console.log([] == ![]);
+
+		//console.log([] == false);
+		//console.log([].valueOf() == false);
+		//[].valueOf()返回值为数组本身，所以不能参与运算
+		//console.log([].toString() == false);
+		//console.log("" == false);
+		//结果就是true
+
+		console.log({} == !{});
+		//console.log({} == false);
+		//console.log({}.valueOf() == false);
+		//console.log({}.toString() == false);
+		//console.log("[object Object]" == false);
+
+
+		var obj = {
+			valueOf: function(){
+				return 123;
+			}
+		};
+		
+		console.log(obj + 1);
+
+		
+
+		//当一个值类型的数据和引用类型的数据发生运算的时候 (+ - * / ==)
+		//会遵守如下的规则：
+		//1. 先调用这个引用类型数据的valueOf方法，获取返回值之后参与运算，如果能运算，那么直接得出结果
+		//2. 如果不能运算, 继续调用该引用类型数据的toString方法，获取返回值参与运算，这个肯定是可以的出来结果的！
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

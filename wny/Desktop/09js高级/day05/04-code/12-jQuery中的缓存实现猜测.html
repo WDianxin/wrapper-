@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//需要一个缓存容器
+			//1. 要保护起来
+			//2. 要提供存取数据的方式
+
+		function createCache(){
+			var cache = {};
+			//一个函数实现存取两个功能，根据用户传入的参数来判断究竟是存还是取
+			return function(key, value){
+				if(value){
+					cache[key] = value;
+				}else{
+					return cache[key];
+				}
+			}
+		}
+
+		var cache = createCache();
+
+		//存数据
+		cache("班长", {name: "浦东吴彦祖"});
+		cache("班长夫人", {name: "如凤姐"});
+
+
+		//取数据
+		console.log(cache("班长"));
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

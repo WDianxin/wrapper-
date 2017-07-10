@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//沙盒游戏： MineCraft
+
+		//沙箱
+			//一个封闭的隔离的环境
+
+
+		//js中的沙箱模式
+
+		(function(window){
+			//最上面写变量的声明
+
+			//功能代码
+
+			//如果需要，就通过window对象向外界暴露接口
+			window.jQuery = window.$ = jQuery;
+		})(window)
+
+		//将window作为参数传进来的原因：
+			//1. 为了实现隔离的逻辑，沙箱外部不能使用沙箱内部的内容，沙箱内部也不去使用沙箱外部的内容，所以如果要在沙箱中使用外部的内容，就需要通过传参的形式，将外部的内容传递给沙箱使用！
+
+			//2. 有利于代码压缩，因为内置对象无法被压缩！通过传参的形式，那么沙箱中使用的就是沙箱的形参，形参是可以被压缩的！
+
+
+
+		//沙箱模式什么时候使用？
+			//1. 类库 框架
+			//2. 插件
+			//3. 组件
+
+
+
+		// var a=10;console.log(a)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

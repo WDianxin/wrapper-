@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//setTimeout 
+		//setTimeout(callback, time)  在指定的time之后，执行callback函数中的内容！
+
+
+		for(var i = 0; i < 10; i ++){
+			function outer(){
+				var j = i;
+				function inner(){
+					console.log(j);
+				}
+				return inner;
+			}
+
+			var f = outer();
+
+			setTimeout(f, 1000);
+
+			// setTimeout(function(){
+			// 	//下面的代码什么时候执行的？
+			// 	//1秒， for循环其实已经执行完毕了， i已经变成了10
+   //             	console.log(i);
+			// }, 1000);	
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

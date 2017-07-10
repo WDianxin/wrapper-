@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//异常，最大的特征，会阻断代码的执行
+
+		//一句报错！
+		//一万行代码
+
+		try{
+			//可能会出错的代码
+			console.log(a);
+		}catch(e){	
+			//出错后的处理代码
+			//e 就出错后，被捕获到的错误信息！
+		}finally{
+			//无论是否发生异常都会执行的代码！
+			//一般在finally中写释放资源的操作！
+		}
+
+
+		try{
+			console.log(a);
+		}catch(e){
+			console.log('出现异常之后的处理代码');
+			console.log(e);
+		}
+
+		console.log("后面的一万行代码！");
+
+
+
+
+		// function test(obj){
+		// 	try{
+		// 		obj.sayHello();
+		// 	}catch(e){
+		// 		console.log(e);
+		// 	}
+		// }
+
+
+		// test({sayHello: function(){
+		// 	console.log('Nice to meet you!')
+		// }});
+
+
+		// 手动抛出异常！
+
+		function add(a, b){
+			if(typeof a == 'number' && typeof b == 'number'){
+				return a + b;
+			}else{
+				//报错！
+				throw {msg: "报错了"};
+			}
+		}
+
+
+		try{
+			add();
+		}catch(e){
+			console.log(e);
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

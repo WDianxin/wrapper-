@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1. 工厂模式
+		function createPerson(name, age){
+			var obj = {};
+			console.log(this);
+			obj.name = name;
+			obj.age = age;
+			return obj;
+		}
+
+		//在判断this是谁的时候，根本不需要考虑函数内部的功能，只需要看函数是怎么被调用的即可，工厂模式的调用模式是函数调用模式，所以this指向的window
+		var p = createPerson();
+
+		//2. 寄生模式
+		function Person(name, age){
+			var obj = {};
+			console.log(this);
+			obj.name = name;
+			obj.age = age;
+			return obj;
+		}
+
+		//寄生模式的调用模式是构造函数调用模式，所以this指向的就是new创建出来的对象
+		var p = new Person();
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

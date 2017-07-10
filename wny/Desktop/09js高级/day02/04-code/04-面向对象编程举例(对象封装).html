@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div>我是div</div>
+	<div>我是div</div>
+	<div>我是div</div>
+	<p>我是p</p>
+	<p>我是p</p>
+	<p>我是p</p>
+
+	<script>
+		// 设置页面中的div和p的边框为1px solid red
+
+
+		// var obj = {
+		// 	car: {
+
+		// 	}
+		// };
+		
+		var iQuery = {
+			//样式相关的内容
+			style: {
+				setBorder: function (eles){
+					//2. 遍历获取到的所有的div
+					for(var i = 0; i < eles.length; i ++){
+						//3. 获取每个div
+						var ele = eles[i];
+						//4. 设置div的样式
+						ele.style.border = "1px solid red";
+					}
+				},
+				css: function(key, value){
+
+				},
+				addClass: function(){
+
+				}
+			},
+			//获取元素相关的内容
+			getEle: {
+				tag: function (tagName){
+					return document.getElementsByTagName(tagName);
+				},
+				id: function(id){
+
+				}
+			},
+			//请求相关的内容
+			request: {
+				ajax: function(){},
+				post: function(){},
+				get: function(){},
+				jsonp: function(){}
+			},
+			//动画相关的内容
+			animation: {
+				animate: function(){},
+				slideDown: function(){}
+			}
+		};
+
+		var $ = iQuery;
+		
+		//1. 获取所有的div
+		var divs = $.getEle.tag("div");
+		var ps = $.getEle.tag("p");
+
+		$.style.setBorder(divs);
+		$.style.setBorder(ps);
+
+		
+		//1. 全局变量污染
+		//2. 代码结构混乱，不利于维护
+	</script>
+</body>
+</html>

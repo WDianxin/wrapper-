@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//如果将方法的声明，放在构造函数里面，那么每次创建对象，方法的声明都会被执行一次，生成一个新的方法，每个对象就都拥有一个独立的这个方法，但是，所有对象拥有的方法的功能都是完全一致的，这样就造成资源浪费问题
+
+		function Person(name, age){
+			this.name = name;
+			this.age = age;
+			this.sayHi = function (){
+				console.log("Nice to meet you!");
+			};
+		}
+
+
+		//解决方法：
+			//将这个方法的声明放在构造函数外面，那么这个声明就只会被执行一次，每次创建对象的时候，都会将这个已经创建好的函数的地址赋值给对象的方法，而不是重新创建一个函数，这样就达到了所有的对象共享同一个方法的目的，节省资源！
+
+
+		function sayHi(){
+			console.log("Nice to meet you!");
+		}
+
+		function Person(name, age){
+			this.name = name;
+			this.age = age;
+			this.sayHi = sayHi;
+		}
+
+		var p = new Person("白百合", 18);
+		p.sayHi();
+
+		var p1 = new Person("陈羽凡", 18);
+		p1.sayHi();
+
+		console.log(p === p1);
+
+		console.log(p.sayHi === p1.sayHi);
+
+
+
+		// var arr = [
+		// 	function(){},
+		// 	function(){}
+		// ];
+
+		// console.log(arr[1] === arr[0]);
+
+		// console.log({} === {});
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//1. 构造函数是什么？
+			// 构造函数就是一个函数，构造函数一般被用来初始化对象！
+
+		//2. 构造函数的特点？
+			//1. 一般情况下，首字母大写
+			//2. 一般情况下，和new关键字一起使用
+			//3. 构造函数不需要自己手动去写return语句，会自动的返回创建出来的对象
+
+
+		//3. 构造函数的执行过程
+			//1. 先使用new关键字创建对象！
+			//2. 调用构造函数，将构造函数内部的this指向刚才new创建出来的对象！
+			//3. 执行构造函数中的代码，通过this为刚才创建出来的对象新增属性和方法！
+			//4. 默认自动返回了刚才创建出来并且已经添加完属性和方法的对象
+
+
+	   //4. 构造函数的注意事项
+	   		//1. 如果自己手动写了return语句
+	   			//1.1 如果return的是值类型的数据，那么不会对默认返回值产生影响！
+	   			//1.2 如果return的是引用类型的数据，那么返回的就是reutrn语句后面的数据，而不是刚才new创建出来的对象了
+
+	   		//2. 如果把构造函数当做普通函数来调用
+	   			//2.1 函数中的this会指向window，通过this添加的所有的属性和方法，全都添加给了window
+	   			//2.2 此时构造函数的返回值，完全按照普通函数的规则来理解
+
+
+		function Person(){
+			this.name = "浦东吴彦祖";
+			this.age = 18;
+			this.sayHello = function(){
+
+			}
+			return 123;
+		}
+
+		// var p = new Person();
+		// console.log(p);
+
+		var p = Person();
+		console.log(p);
+
+		// function test(){
+		// 	console.log(this)
+		// 	this.name = "xxx";
+		// }
+		// var t = new test();
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

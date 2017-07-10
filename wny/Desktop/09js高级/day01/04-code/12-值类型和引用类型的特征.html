@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//当值类型的数据进行赋值的时候，会将现有变量存储的数据直接复制一份交给新的变量，此时两个变量虽然值一样，但是存储的空间完全独立，修改其中一个，另外一个不受影响
+
+		// var num = 1;
+		// var num1 = num;
+		// num1 = 100;
+		// console.log(num);
+
+
+		//引用类型的数据在赋值的时候，会将当前变量中存储的对象的地址复制一份交给新的变量，此时两个变量同时指向了同一个对象，修改其中一个，另外一个也会受到影响
+		// var obj = {
+		// 	name: "高富帅"
+		// };
+
+		// var obj1 = obj;
+		// obj1.name = "矮穷丑";
+		// obj1 = {
+		// 	name: "白富美"
+		// }
+
+		// console.log(obj.name);
+
+		// var o = {
+		// 	name: "高富帅"
+		// };
+
+		// function upgrade(obj){
+		// 	//var obj = o
+		// 	obj.name = "矮穷丑"
+		// 	obj = {
+		// 		name: "白富美"
+		// 	};
+		// }
+
+		// upgrade(o);
+		// console.log(o.name);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

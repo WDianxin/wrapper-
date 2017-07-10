@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		//如何将伪数组转换成真数组
+		// var fakeArr = {
+		// 	0: "吴彦祖",
+		// 	1: "陈冠希",
+		// 	2: "金城武",
+		// 	3: "谢霆锋",
+		// 	4: "张震",
+		// 	length: 5
+		// };
+
+		//1. for循环
+		// var realArr = [];
+		// for(var i = 0; i < fakeArr.length; i++){
+		// 	realArr.push(fakeArr[i]);
+		// }
+		// console.log(realArr);
+
+		//2. push  数组.push(1, 2, 3)
+		// var realArr = [];
+		// realArr.push(fakeArr[0], fakeArr[1], fakeArr[2], fakeArr[3]);
+
+		// realArr.push.apply(realArr, fakeArr);
+		//1. 调用realArr.push
+		//2. 将this指向realArr
+		//3. 将fakeArr中的内容拆解开依次传递给realArr.push作为实参
+		//相当于是在以如下的形式调用push方法
+	    // realArr.push(fakeArr[0], fakeArr[1], fakeArr[2], fakeArr[3]);
+		// console.log(realArr);
+
+		//3. concat  数组.concat(1, 2, 3)
+
+		// var realArr = [];
+		// realArr = realArr.concat(fakeArr[0], fakeArr[1], fakeArr[2], fakeArr[3], fakeArr[4]);
+
+		// realArr = realArr.concat.apply(realArr, fakeArr);
+		//1. 调用realArr.concat
+		//2. 把this指向realArr
+		//3. 把fakeArr拆解开依次传递给realArr.concat作为实参
+
+		//4. slice
+		// var realArr = Array.prototype.slice.call(fakeArr);
+		//1. 调用了Array.prototype.slice
+		//2. 把里面的this改成了fakeArr
+		// //3. 没有给slice方法传递任何参数
+		// console.log(realArr);
+
+		// //slice方法的原理
+		// Array.prototype.mySlice = function(start, end){
+		// 	var result = [];
+		// 	start = start || 0;
+		// 	end = end || this.length;
+		// 	for(var i = start; i < end ; i++){
+		// 		result.push(this[i]);
+		// 	}
+		// 	return result;
+		// }
+
+
+		// var arr = [1, 2, 3, 4, 5];
+		// console.log(arr.slice());
+
+
+
+		//求数组中所所有元素的最大值
+		// var arr = [1, 2, 3, 4, 5];
+		// var max = arr[0];
+		// for(var i = 1; i < arr.length; i ++){
+		// 	max = max > arr[i] ? max : arr[i];
+		// }
+		// console.log(Math.max.apply(Math, arr));
+		// console.log(Math.min.apply(Math, arr));
+
+
+		// function sum(){
+		// 	var result = 0;
+		// 	for(var i = 0; i < arguments.length; i ++){
+		// 		result += arguments[i];
+		// 	}
+		// 	return result;
+		// }
+
+		// console.log(sum.apply(window, arr));
+
+
+		//使用上下文调用模式 实现 方法的借用
+		// var monitor = {
+		// 	money: 0,
+		// 	makeMoney: function(){
+		// 		this.money += 10000;
+		// 	}
+		// };
+
+		// monitor.makeMoney();
+		// monitor.makeMoney();
+
+		// console.log(monitor.money);
+
+		// var monitorWife = {
+		// 	money: 0
+		// };
+
+		// monitor.makeMoney.call(monitorWife);
+		// monitor.makeMoney.call(monitorWife);
+		// monitor.makeMoney.call(monitorWife);
+		// monitor.makeMoney.call(monitorWife);
+
+		// console.log(monitorWife.money);
+
+		var fakeArr = {
+			0: "吴彦祖",
+			1: "陈冠希",
+			2: "金城武",
+			3: "谢霆锋",
+			4: "张震",
+			length: 5
+		};
+
+
+
+		// Array.prototype.push.call(fakeArr, "张柏芝");
+		// console.log(fakeArr);
+
+
+		//push方法的原理
+		// Array.prototype.myPush = function(ele){
+		// 	this[this.length] = ele;
+		// }
+
+		// var arr = [];
+		// arr.myPush(1);
+
+		// Array.prototype.forEach.call(fakeArr, function(value, index, arr){
+		// 	console.log(value);
+		// });
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

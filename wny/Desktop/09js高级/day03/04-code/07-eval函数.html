@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//eval是一个函数，可以把字符串当做代码来执行
+		//和Function区别在于，eval会将字符串转换成代码并且直接执行
+		//而Function创建出来的是函数，函数必须得手动的调用，里面的代码才会执行
+		// "var a = 10;"
+		// eval("var a = 10;")
+		// console.log(a);
+
+		// function test(){
+		// 	return 2;
+		// }
+
+		// var b = eval("test()");
+
+		// console.log(b);
+
+		//JSON    '{"key": value, "key": value}'  '[]'
+		//如何将JSON格式的字符串转成js对象
+
+		// var jsonStr = '{"name": "王力宏", "age": 18}';
+		// var obj = JSON.parse(jsonStr);  //JSON2
+
+
+		//使用eval来解析JSON格式的字符串
+
+		//当使用eval直接解析json格式的字符串的时候，系统会将{}当做代码块来处理，而不是对象字面量，所以会报错！
+
+		// var jsonStr = '{"name": "王力宏", "age": 18}';
+		// eval("var obj = " + jsonStr);  //var obj = {"name": "王力宏", "age": 18}
+
+		var obj = eval("(" + jsonStr + ")");  // eval('({"name": "王力宏", "age": 18})')
+
+
+		// {
+		// 	"name": "王力宏", 
+		// 	"age": 18
+		// }
+
+
+		// ({
+		// 	console.log(123);
+		// })
+
+
+		//代码块？？？
+
+		//代码块只能单独存在， 但是对象字面量可以作为句子的一部分存在，给变量赋值，或者传参
+
+		// {
+		// 	console.log(1);
+		// 	console.log(2);
+		// 	console.log(3);
+		// 	console.log(4);
+		// }
+
+
+		// var o = {};
+
+		//Function 和 eval 都存在安全性问题
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

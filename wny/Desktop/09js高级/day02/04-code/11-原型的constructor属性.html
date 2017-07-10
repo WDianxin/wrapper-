@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		//构造函数的原型中有一个属性，constructor属性，可以访问到这个原型对应的构造函数
+		function Person(){
+
+		}
+
+
+		//当我们自己创建一个对象赋值给构造函数的prototype属性的时候，系统不会自动帮我们补constructor属性，所以访问的时候，是访问不到对应的构造函数的！
+		Person.prototype = {
+			constructor: Person
+		};
+
+		var p = new Person();
+		console.log(p.constructor);
+
+
+		// console.dir(Person.prototype.constructor);
+
+		// var p = new Person();
+
+		// console.dir(p.constructor);
+
+
+		// var p2 = new p.constructor();
+
+		// var p3 = new Person.prototype.constructor.prototype.constructor();
+
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

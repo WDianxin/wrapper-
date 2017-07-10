@@ -1,0 +1,57 @@
+经典继承
+
+
+var obj1 = {
+	name: "",
+	age: 18
+}
+
+function Person(){}
+Person.prototype = obj1;
+
+var p = new Person();
+
+
+其实经典继承就是一个快捷的实现原型继承的方式！
+
+var p = Object.create(obj1);
+
+function mycreate(obj1){
+	if(Object.create){
+		return Object.create(obj1);
+	}else{
+		function F(){}
+		F.prototype = obj1;
+		return new F();
+	}
+}
+
+
+1. 不要修改大家共享的内容（Object Array Date Math）
+2. 修改自己的自定义的内容 （修改共享的内容很可能出现冲突，但是修改自定义的内容只会影响到自己）
+
+3. 创建一个自定义的构造函数， 以后在这个自定义构造函数上的任何修改，是不会影响到别人的！
+
+4. 但是自定义的构造函数，创建出来的对象是不具备数组的功能的！
+
+5. 这个时候，就可以利用继承来实现，让这个自定的构造函数创建出来的对象拥有数组的功能
+
+6. 实现继承之后，再对这个自定义函数的原型进行功能的扩展，就不会对别人产生任何的影响了，因为没有修改任何一个和别人共享的内容！
+
+function MyArray(){
+	
+}
+
+MyArray.prototype = [];
+MyArray.prototype.sayHello = function(){
+	
+}
+
+var arr = new MyArray();
+
+
+Array.prototype.sayHello = "你是一个大坏蛋！";
+
+
+
+Array.prototype.sayHello = "你是一个好人！";

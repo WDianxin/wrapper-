@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		//map
+		//map方法和forEach方法都可以用来快速遍历数组
+		//arr.map(function(value, index, arr){
+		// })
+
+		var arr = [1, 2, 3, 4, 5];
+		// var dbArr = [];
+
+		// arr.map(function(value, index, arr){
+		// 	dbArr.push(value * 2);
+		// })
+
+		// console.log(dbArr);
+
+		//但是，forEach方法是没有返回值的，map方法有返回值
+		//给map方法传递的回调函数，数组有多少元素，就会调用多少次
+		//每次调用该回调函数，都会产生一个返回值
+		//map方法的返回值，就是将每次调用回调函数产生的返回值组合成一个新的数组
+		
+		// var dbArr = arr.map(function(value, index, arr){
+		// 	// dbArr.push(value * 2);
+		// 	return value * 2;
+		// });
+
+		// var strArr = arr.map(function(value, index, arr){
+		// 	return value + "";
+		// })
+
+
+		//map方法的原理
+		// Array.prototype.myMap = function(callback){
+		// 	var result = [];
+		// 	for(var i = 0; i < this.length; i++){
+		// 		var temp = callback(this[i], i, this);
+		// 		result.push(temp);
+		// 	}
+		// 	return result;
+		// }
+
+		// var dbArr = arr.myMap(function(value, index, arr){
+		// 	return value * 2;
+		// });
+
+
+		// var strArr = arr.map(String);
+
+		// var result = [];
+		// for(var i = 0; i < arr.length; i++){
+		// 	var temp = String(arr[i], i, arr);
+		// 	result.push(temp);
+		// }
+
+		// function test(a){
+		// 	console.log(a);
+		// }
+
+		// test(1,2,3,4,3,43,4,34,3,432);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

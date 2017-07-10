@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+		// function fib(n){
+		// 	if(n == 1 || n == 2){
+		// 		return 1;
+		// 	}
+		// 	return fib(n - 1) + fib(n - 2);
+		// }
+
+		function createCache(){
+			var cache = {};
+			var keys = [];
+			return function(key, value){
+				if(value){
+					cache[key] = value;
+					keys.push(key);
+					if(keys.length > 50){
+						var delKey = keys.shift();
+						delete cache[delKey];
+					}
+				}else{
+					return cache[key];
+				}
+			}
+		}
+
+		//思路：
+			//1. 容器就是用来存储已经计算好的这个数字的
+			//2. 每次要计算一个数字的时候，我就先去缓存容器中找
+			//3. 如果找到了，就意味着之前算出来过，那就拿出来直接使用
+			//4. 如果没有找到，就去计算，算出来结果之后，把它往缓存中放一份，方便下次使用
+
+
+		//创建一个缓存容器，用来保存已经计算出来的斐波那契数字
+		var cache = createCache();
+
+		function fib(n){
+			//去缓存容器中找对应的数字
+			var num = cache(n);
+			//如果找到了这个num就直接返回
+			if(num){
+				return num;
+			}else{
+				//如果缓存中并没有我们需要的内容，就要自己去计算了
+				if(n == 1 || n == 2){
+					num = 1;
+				}else{
+					num = fib(n - 1) + fib(n - 2);
+				}
+				//算出结果之后，要把算出来的结果往缓存中丢一份
+				cache(n, num);
+				return num;
+			}
+		}
+		fib(5);
+
+		// console.log(fib(100));
+		// console.log(count);
+		// fib(101)
+		// console.log(count);
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
