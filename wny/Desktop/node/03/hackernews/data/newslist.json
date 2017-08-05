@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title":" I love coding, and I am 40. Can I still become a developer – and is it worth it?",
+    "url":"",
+    "text":"  I am very passionate about coding: I started to program when I was 11 (that was 1988) and I never stopped. What do you think?"
+  },
+  {
+    "id": 2,
+    "title":"Ask HN: What's the Hacker News of hardware?",
+    "url":"",
+    "text":"I was wondering the same question because I have an EE degree and am annoyed there is no website that spews interesting content for my profession. Maybe Planet Analog or EEVBlog forum? It's very hard to find great tutorials."
+  },
+  {
+    "id": 3,
+    "title":"Ask HN: Has Facebook turned off email notifications?",
+    "url":"",
+    "text":"I am not a big Facebook user -- I rely on their email notifications feature so that I'm aware when someone sends me a message or event invitation."
+  },
+  {
+    "id": 4,
+    "title":"Ask HN: How has Facebook figured out my family doctor as a friend suggestion?",
+    "url":"",
+    "text":"I never use Facebook on my phone so you can hopefully rule out contact list networks - not that I ever had their personal mobile on my list - and location tracking because I haven't attended my doctor's surgery in years. "
+  },
+  {
+    "id": 5,
+    "title":"Ask HN: Best tool to build a single page, text-focused static content site?",
+    "url":"http://www.baidu.com",
+    "text":"Strikingly isn't text focused enough - the typography sucks and page load times are huge Squarespace isn't designed for long form content either"
+  },
+  {
+    "id": 6,
+    "title":"Ask HN: How do you design a website in 2017?",
+    "url":"http://www.163.com",
+    "text":"  I know how to BUILD a website but I'm curious to know modern workflows for designing a website before build out."
+  },
+  {
+    "id": 7,
+    "title":"习近平对推进“两学一做”学习教育常态化制度化作出重要指示",
+    "url":"http://news.163.com/17/0416/19/CI5SE4VE000189FH.html",
+    "text":"新华社北京4月16日电 中共中央总书记、国家主席、中央军委主席习近平日前作出重要指示强调，在全党开展“两学一做”学习教育，取得了显著成效。实践证明，“两学一做”学习教育是推进思想建党、组织建党、制度治党的有力抓手，是全面从严治党的基础性工程，要坚持不懈抓下去。"
+  },
+  {
+    "id": 8,
+    "title":"特朗普支持者和反对者爆发混战 7人送医21人被捕",
+    "url":"http://news.163.com/17/0417/11/CI7JD4A50001875O.html",
+    "text":"当地时间4月15日——美国“缴税日”（Tax Day）。当天，美国多个城市爆发抗议活动，要求总统特朗普公布其纳税记录。"
+  },
+  {
+    "id": 9,
+    "title":"英媒：特朗普宣布美国强势美元政策终结",
+    "url":"http://news.163.com/17/0417/11/CI7JQ45V00018AOQ.html",
+    "text":"参考消息网4月17日报道 英媒称，美国总统特朗普上周有关美元和美国货币政策的讲话提供了更多的证据，表明1995年时任财长罗伯特·鲁宾启动的强势美元政策正在发生变化，当时美元处于战后的最低点。"
+  }
+]
